@@ -16,6 +16,7 @@ function desenhaPalhetaDeCores(cor, x, y) {
 
 desenhaPalhetaDeCores("black", 5, 5);
 desenhaPalhetaDeCores("red", 58, 5);
+desenhaPalhetaDeCores("orange", 111, 5);
 
 function pintarCirculo(evento) {
 	var x = evento.pageX - tela.offsetLeft;
@@ -27,12 +28,17 @@ function pintarCirculo(evento) {
 	} else if (x <= 50 + 58 && y <= 50 + 5) {
 		alert("vermelho");
 		corEscolhida = "red";
+	} else if (x <= 50 + 111 && y <= 50 + 5) {
+		alert("laranja");
+		corEscolhida = "orange";
 	}
 
-	pincel.fillStyle = corEscolhida;
-	pincel.beginPath();
-	pincel.arc(x, y, 10, 0, 2*3.14);
-	pincel.fill();
+	if (y > 50 + 5) {
+		pincel.fillStyle = corEscolhida;
+		pincel.beginPath();
+		pincel.arc(x, y, 10, 0, 2*3.14);
+		pincel.fill();
+	}
 }
 
 tela.onclick = pintarCirculo;
