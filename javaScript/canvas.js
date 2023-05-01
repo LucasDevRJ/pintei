@@ -17,6 +17,7 @@ function desenhaPalhetaDeCores(cor, x, y) {
 desenhaPalhetaDeCores("black", 5, 5);
 desenhaPalhetaDeCores("red", 58, 5);
 desenhaPalhetaDeCores("orange", 111, 5);
+desenhaPalhetaDeCores("pink", 164, 5);
 
 function pintarCirculo(evento) {
 	var x = evento.pageX - tela.offsetLeft;
@@ -31,6 +32,9 @@ function pintarCirculo(evento) {
 	} else if (x <= 50 + 111 && y <= 50 + 5) {
 		alert("laranja");
 		corEscolhida = "orange";
+	} else if (x <= 50 + 164 && y <= 50 + 5) {
+		alert("rosa");
+		corEscolhida = "pink";
 	}
 
 	if (y > 50 + 5) {
