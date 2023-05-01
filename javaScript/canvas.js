@@ -1,0 +1,1 @@
+var tela = document.querySelector("canvas");
