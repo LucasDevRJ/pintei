@@ -50,8 +50,12 @@ function pintarCirculo(evento) {
 
 		if (y > 50 + 5) {
 
-			if (evento.shiftKey == true) {
+			if (evento.shiftKey == true && raio < 50) {
 				raio += 1;
+			}
+
+			if (evento.altKey && raio > 10) {
+				raio -= 1;
 			}
 
 			pincel.fillStyle = corEscolhida;
