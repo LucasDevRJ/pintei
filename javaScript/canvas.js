@@ -2,6 +2,7 @@ var tela = document.querySelector("canvas");
 var pincel = tela.getContext("2d");
 var corEscolhida = "blue";
 var desenha = false;
+var raio = 10;
 
 function habilitaDesenho() {
 	desenha = true;
@@ -48,15 +49,20 @@ function pintarCirculo(evento) {
 		}
 
 		if (y > 50 + 5) {
+
+			if (evento.shiftKey == true) {
+				raio += 1;
+			}
+
 			pincel.fillStyle = corEscolhida;
 			pincel.beginPath();
-			pincel.arc(x, y, 10, 0, 2*3.14);
+			pincel.arc(x, y, raio, 0, 2*3.14);
 			pincel.fill();
 		}
 	}
 }
 
-tela.onclick = onmousemove;
+tela.onmousemove = pintarCirculo;
 tela.onmousedown = habilitaDesenho;
 tela.onmouseup = desabilitaDesenho;
 
