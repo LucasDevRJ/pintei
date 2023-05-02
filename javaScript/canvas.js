@@ -2,9 +2,11 @@ var tela = document.querySelector("canvas");
 var pincel = tela.getContext("2d");
 var corEscolhida = "blue";
 
-pincel.fillStyle = "lightgray";
-pincel.fillRect(0, 0, 1350, 625);
-pincel.fill();
+function pintarQuadro() {
+	pincel.fillStyle = "lightgray";
+	pincel.fillRect(0, 0, 1350, 625);
+	pincel.fill();
+}
 
 function desenhaPalhetaDeCores(cor, x, y) {
 	pincel.fillStyle = cor;
@@ -13,11 +15,6 @@ function desenhaPalhetaDeCores(cor, x, y) {
 	pincel.strokeRect(x, y, 50, 50);
 	pincel.fill();
 }
-
-desenhaPalhetaDeCores("black", 5, 5);
-desenhaPalhetaDeCores("red", 58, 5);
-desenhaPalhetaDeCores("orange", 111, 5);
-desenhaPalhetaDeCores("pink", 164, 5);
 
 function pintarCirculo(evento) {
 	var x = evento.pageX - tela.offsetLeft;
@@ -46,3 +43,9 @@ function pintarCirculo(evento) {
 }
 
 tela.onclick = pintarCirculo;
+
+pintarQuadro();
+desenhaPalhetaDeCores("black", 5, 5);
+desenhaPalhetaDeCores("red", 58, 5);
+desenhaPalhetaDeCores("orange", 111, 5);
+desenhaPalhetaDeCores("pink", 164, 5);
