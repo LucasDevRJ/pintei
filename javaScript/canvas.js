@@ -1,6 +1,15 @@
 var tela = document.querySelector("canvas");
 var pincel = tela.getContext("2d");
 var corEscolhida = "blue";
+var desenha = false;
+
+function habilitaDesenho() {
+	desenha = true;
+}
+
+function desabilitaDesenho() {
+	desenha = false;
+}
 
 function pintarQuadro() {
 	pincel.fillStyle = "lightgray";
@@ -17,35 +26,39 @@ function desenhaPalhetaDeCores(cor, x, y) {
 }
 
 function pintarCirculo(evento) {
-	var x = evento.pageX - tela.offsetLeft;
-	var y = evento.pageY - tela.offsetTop;
+	if (desenha == true) { 
+		var x = evento.pageX - tela.offsetLeft;
+		var y = evento.pageY - tela.offsetTop;
 
-	if (x <= 50 + 5 && y <= 50 + 5) {
-		alert("preto");
-		corEscolhida = "black";
-	} else if (x <= 50 + 58 && y <= 50 + 5) {
-		alert("vermelho");
-		corEscolhida = "red";
-	} else if (x <= 50 + 111 && y <= 50 + 5) {
-		alert("laranja");
-		corEscolhida = "orange";
-	} else if (x <= 50 + 164 && y <= 50 + 5) {
-		alert("rosa");
-		corEscolhida = "pink";
-	} else if (x <= 50 + 217 && y <= 50 + 5) {
-		alert("roxo");
-		corEscolhida = "purple";
-	}
+		if (x <= 50 + 5 && y <= 50 + 5) {
+			alert("preto");
+			corEscolhida = "black";
+		} else if (x <= 50 + 58 && y <= 50 + 5) {
+			alert("vermelho");
+			corEscolhida = "red";
+		} else if (x <= 50 + 111 && y <= 50 + 5) {
+			alert("laranja");
+			corEscolhida = "orange";
+		} else if (x <= 50 + 164 && y <= 50 + 5) {
+			alert("rosa");
+			corEscolhida = "pink";
+		} else if (x <= 50 + 217 && y <= 50 + 5) {
+			alert("roxo");
+			corEscolhida = "purple";
+		}
 
-	if (y > 50 + 5) {
-		pincel.fillStyle = corEscolhida;
-		pincel.beginPath();
-		pincel.arc(x, y, 10, 0, 2*3.14);
-		pincel.fill();
+		if (y > 50 + 5) {
+			pincel.fillStyle = corEscolhida;
+			pincel.beginPath();
+			pincel.arc(x, y, 10, 0, 2*3.14);
+			pincel.fill();
+		}
 	}
 }
 
-tela.onclick = pintarCirculo;
+tela.onclick = onmousemove;
+tela.onmousedown = habilitaDesenho;
+tela.onmouseup = desabilitaDesenho;
 
 pintarQuadro();
 desenhaPalhetaDeCores("black", 5, 5);
