@@ -32,6 +32,9 @@ function pintarCirculo(evento) {
 	} else if (x <= 50 + 164 && y <= 50 + 5) {
 		alert("rosa");
 		corEscolhida = "pink";
+	} else if (x <= 50 + 217 && y <= 50 + 5) {
+		alert("roxo");
+		corEscolhida = "purple";
 	}
 
 	if (y > 50 + 5) {
@@ -49,3 +52,4 @@ desenhaPalhetaDeCores("black", 5, 5);
 desenhaPalhetaDeCores("red", 58, 5);
 desenhaPalhetaDeCores("orange", 111, 5);
 desenhaPalhetaDeCores("pink", 164, 5);
+desenhaPalhetaDeCores("purple", 217, 5);
