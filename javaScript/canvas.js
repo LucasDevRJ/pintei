@@ -1,6 +1,6 @@
 var tela = document.querySelector("canvas");
 var pincel = tela.getContext("2d");
-var corEscolhida = "blue";
+var corEscolhida = "black";
 var desenha = false;
 var raio = 10;
 
@@ -46,6 +46,12 @@ function pintarCirculo(evento) {
 		} else if (x <= 50 + 217 && y <= 50 + 5) {
 			alert("roxo");
 			corEscolhida = "purple";
+		} else if (x <= 50 + 270 && y <= 50 + 5) {
+			alert("verde");
+			corEscolhida = "grenn";
+		} else if (x <= 50 + 323 && y <= 50 + 5) {
+			alert("azul");
+			corEscolhida = "blue";
 		}
 
 		if (y > 50 + 5) {
@@ -76,3 +82,5 @@ desenhaPalhetaDeCores("red", 58, 5);
 desenhaPalhetaDeCores("orange", 111, 5);
 desenhaPalhetaDeCores("pink", 164, 5);
 desenhaPalhetaDeCores("purple", 217, 5);
+desenhaPalhetaDeCores("green", 270, 5);
+desenhaPalhetaDeCores("blue", 323, 5);
