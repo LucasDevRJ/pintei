@@ -52,6 +52,18 @@ function pintarCirculo(evento) {
 		} else if (x <= 50 + 323 && y <= 50 + 5) {
 			alert("azul");
 			corEscolhida = "blue";
+		} else if (x <= 50 + 376 && y <= 50 + 5) {
+			alert("marrom");
+			corEscolhida = "brown";
+		} else if (x <= 50 + 429 && y <= 50 + 5) {
+			alert("branco");
+			corEscolhida = "white";
+		} else if (x <= 50 + 482 && y <= 50 + 5) {
+			alert("cinza");
+			corEscolhida = "gray";
+		} else if (x <= 50 + 535 && y <= 50 + 5) {
+			alert("amarelo");
+			corEscolhida = "yellow";
 		}
 
 		if (y > 50 + 5) {
@@ -84,3 +96,7 @@ desenhaPalhetaDeCores("pink", 164, 5);
 desenhaPalhetaDeCores("purple", 217, 5);
 desenhaPalhetaDeCores("green", 270, 5);
 desenhaPalhetaDeCores("blue", 323, 5);
+desenhaPalhetaDeCores("brown", 376, 5);
+desenhaPalhetaDeCores("white", 429, 5);
+desenhaPalhetaDeCores("gray", 482, 5);
+desenhaPalhetaDeCores("yellow", 535, 5);
